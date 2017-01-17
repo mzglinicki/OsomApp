@@ -49,7 +49,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListItemViewHolder> {
         holder.getListItem().setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(final View v) {
-                clickListener.onItemClickListener(holder, model);
+                clickListener.onItemClickListener(model);
             }
         });
     }
@@ -60,6 +60,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListItemViewHolder> {
     }
 
     public interface ListClickable {
-        void onItemClickListener(final ListItemViewHolder holder, final ListItem model);
+        void onItemClickListener(final ListItem model);
     }
 }

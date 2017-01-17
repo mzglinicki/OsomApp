@@ -12,7 +12,7 @@
     <dimen name="expendTitleMarginStart">50dp</dimen>
 
     //ListItem
-    <dimen name="list_item_height">48dp</dimen>
+    <dimen name="listItemHeight">48dp</dimen>
     <dimen name="itemSeparator">1dp</dimen>
 
     //DetailsActivity

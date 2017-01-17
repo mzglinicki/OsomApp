@@ -41,11 +41,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public Cursor getAllRatedImets() {
-        final SQLiteDatabase database = getReadableDatabase();
-        return database.rawQuery("select * from " + RatedItemsTable.TABLE_NAME, null);
-    }
-
     public boolean ifRecordExist(final int itemId) {
         final SQLiteDatabase database = getReadableDatabase();
         final String Query = "Select * from " + RatedItemsTable.TABLE_NAME + " where " + RatedItemsTable.COLUMN_RATED_ITEM_ID + " = " + itemId;

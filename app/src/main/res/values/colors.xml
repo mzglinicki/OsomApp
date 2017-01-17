@@ -7,9 +7,7 @@
     <color name="primaryLight">#F5F5F5</color>
     <color name="colorAccent">#FFC107</color>
     <color name="primaryText">#212121</color>
-    <color name="secondaryText">#757575</color>
     <color name="icons">#212121</color>
-    <color name="divider">#BDBDBD</color>
 
     <color name="background">@color/primaryLight</color>
 </resources>

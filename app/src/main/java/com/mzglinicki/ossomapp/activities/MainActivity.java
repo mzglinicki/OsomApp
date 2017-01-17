@@ -35,8 +35,6 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
 
     @Bind(R.id.recyclerView)
     protected RecyclerView recyclerView;
-    @Bind(R.id.collapsingToolbar)
-    protected CollapsingToolbarLayout collapsingLayout;
     @Bind(R.id.toolbar)
     protected Toolbar toolbar;
     @Bind(R.id.toolbarImage)
@@ -104,7 +102,7 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     }
 
     @Override
-    public void onItemClickListener(final ListItemViewHolder holder, final ListItem model) {
+    public void onItemClickListener(final ListItem model) {
 
         if (!isNetworkAvailable()) {
             showErrorMessage(getString(R.string.checkNetConnection));

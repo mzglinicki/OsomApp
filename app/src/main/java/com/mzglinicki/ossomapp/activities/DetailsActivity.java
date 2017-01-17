@@ -30,8 +30,6 @@ public class DetailsActivity extends ActivityParent {
 
     @Bind(R.id.speakerPhotoField)
     protected ImageView speakerPhotoField;
-    @Bind(R.id.starsLayout)
-    protected LinearLayout starsLayout;
     @Bind(R.id.nameField)
     protected TextView nameField;
     @Bind(R.id.descriptionField)
