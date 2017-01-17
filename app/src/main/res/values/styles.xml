@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowFullscreen">true</item>
+
+    </style>
+
+    <style name="detailFieldTitleStyle">
+        <item name="android:textSize">@dimen/bodyTextSize</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:layout_marginStart">@dimen/mainMargin</item>
+        <item name="android:layout_marginBottom">@dimen/mainMargin</item>
+    </style>
+
+    <style name="detailInputStyle">
+        <item name="android:textSize">@dimen/bodyTextSize</item>
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:layout_marginBottom">@dimen/mainMargin</item>
+        <item name="android:layout_marginEnd">@dimen/mainMargin</item>
+
+    </style>
+
+    <style name="progressBarStyle">
+        <item name="android:layout_width">@dimen/progressBarSize</item>
+        <item name="android:layout_height">@dimen/progressBarSize</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+</resources>

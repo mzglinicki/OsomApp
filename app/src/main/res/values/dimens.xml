@@ -1,0 +1,24 @@
+<resources>
+
+    <dimen name="mainMargin">16dp</dimen>
+    <dimen name="smallMargin">10dp</dimen>
+
+    //AppBar
+    <dimen name="expendAppBarSize">400dp</dimen>
+    <dimen name="expendTitleMarginStart">50dp</dimen>
+
+    //ListItem
+    <dimen name="list_item_height">48dp</dimen>
+    <dimen name="itemSeparator">1dp</dimen>
+
+    //DetailsActivity
+    <dimen name="detailImageSize">120dp</dimen>
+    <dimen name="bodyTextSize">14sp</dimen>
+    <dimen name="progressBarSize">48dp</dimen>
+    <dimen name="buttonWidth">150dp</dimen>
+    <dimen name="buttonHeight">36dp</dimen>
+
+    //MainActivity
+    <dimen name="fABSize">40dp</dimen>
+
+</resources>

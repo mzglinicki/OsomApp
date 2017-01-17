@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/progressBarStyle"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/speakerPhotoField"
+        android:layout_width="@dimen/detailImageSize"
+        android:layout_height="@dimen/detailImageSize"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/mainMargin"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/speakerPhotoField"
+        android:text="@string/photo"
+        android:textSize="@dimen/bodyTextSize" />
+
+    <TextView
+        android:id="@+id/nameField"
+        style="@style/detailInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/speakerNameField"
+        android:layout_below="@+id/speakerPhotoField" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameField"
+        android:text="@string/description" />
+
+    <TextView
+        android:id="@+id/descriptionField"
+        style="@style/detailInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/speakerNameField"
+        android:layout_below="@+id/nameField" />
+
+    <TextView
+        android:id="@+id/speakerName"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionField"
+        android:text="@string/speakerNameTitle" />
+
+    <TextView
+        android:id="@+id/speakerNameField"
+        style="@style/detailInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/descriptionField"
+        android:layout_marginStart="@dimen/smallMargin"
+        android:layout_toRightOf="@+id/speakerName" />
+
+    <TextView
+        android:id="@+id/score"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/speakerName"
+        android:text="@string/scoreTitle" />
+
+    <TextView
+        android:id="@+id/scoreField"
+        style="@style/detailInputStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/speakerNameField"
+        android:layout_below="@+id/speakerNameField" />
+
+    <TextView
+        android:id="@+id/setNote"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/score"
+        android:layout_marginTop="@dimen/mainMargin"
+        android:text="@string/rateProfileTitle" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setNote"
+        android:layout_margin="@dimen/mainMargin"
+        android:max="10" />
+
+    <TextView
+        android:id="@+id/seekBarValue"
+        style="@style/detailFieldTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/mainMargin" />
+
+    <Button
+        android:id="@+id/sendNoteBtn"
+        android:layout_width="@dimen/buttonWidth"
+        android:layout_height="@dimen/buttonHeight"
+        android:layout_below="@+id/seekBarValue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/mainMargin"
+        android:background="@color/colorAccent"
+        android:text="@string/sendNoteBtnTitle" />
+
+</RelativeLayout>
