@@ -2,6 +2,10 @@
 
     <dimen name="mainMargin">16dp</dimen>
     <dimen name="smallMargin">10dp</dimen>
+    <dimen name="wordsExtraSpace">5dp</dimen>
+
+    <dimen name="iconSize">24dp</dimen>
+    <dimen name="iconPadding">12dp</dimen>
 
     //AppBar
     <dimen name="expendAppBarSize">400dp</dimen>
@@ -17,6 +21,7 @@
     <dimen name="progressBarSize">48dp</dimen>
     <dimen name="buttonWidth">150dp</dimen>
     <dimen name="buttonHeight">36dp</dimen>
+    <dimen name="starsLayoutHeight">48dp</dimen>
 
     //MainActivity
     <dimen name="fABSize">40dp</dimen>

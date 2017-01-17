@@ -72,12 +72,7 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
         setupToolbar(toolbar);
         setupScrollListener(recyclerView);
         setupRefreshListener(swipeContainer);
-    }
-
-    @Override
-    protected void onResume() {
         refreshList();
-        super.onResume();
     }
 
     @Override
@@ -89,6 +84,12 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     @Override
     public void onBackPressed() {
         doubleClickToClose(R.string.clickToClose);
+    }
+
+    @Override
+    protected void onResume() {
+        setupScrollToBeginBtn(linearLayoutManager.findFirstVisibleItemPosition());
+        super.onResume();
     }
 
     @Override

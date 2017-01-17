@@ -93,28 +93,68 @@
         android:layout_marginTop="@dimen/mainMargin"
         android:text="@string/rateProfileTitle" />
 
-    <SeekBar
-        android:id="@+id/seekBar"
+    <LinearLayout
+        android:id="@+id/starsLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/starsLayoutHeight"
         android:layout_below="@+id/setNote"
-        android:layout_margin="@dimen/mainMargin"
-        android:max="10" />
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/seekBarValue"
-        style="@style/detailFieldTitleStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/mainMargin" />
+        <ImageButton
+            android:id="@+id/firstStar"
+            style="@style/iconStyle"
+            android:src="@drawable/ic_star_border" />
+
+        <ImageButton
+            android:id="@+id/secondStar"
+            style="@style/iconStyle"
+            android:src="@drawable/ic_star_border" />
+
+        <ImageButton
+            android:id="@+id/thirdStar"
+            style="@style/iconStyle"
+            android:src="@drawable/ic_star_border" />
+
+        <ImageButton
+            android:id="@+id/fourthStar"
+            style="@style/iconStyle"
+            android:src="@drawable/ic_star_border" />
+
+        <ImageButton
+            android:id="@+id/fifthStar"
+            style="@style/iconStyle"
+            android:src="@drawable/ic_star_border" />
+
+        <TextView
+            android:id="@+id/sendNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/wordsExtraSpace"
+            android:text="@string/your_note"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/sendNoteValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/megastars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/wordsExtraSpace"
+            android:text="@string/megastars"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/sendNoteBtn"
         android:layout_width="@dimen/buttonWidth"
         android:layout_height="@dimen/buttonHeight"
-        android:layout_below="@+id/seekBarValue"
+        android:layout_below="@+id/starsLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/mainMargin"
         android:background="@color/colorAccent"

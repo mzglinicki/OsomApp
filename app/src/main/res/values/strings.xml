@@ -12,5 +12,7 @@
     <string name="sendNoteBtnTitle">Send note</string>
     <string name="toolbarTitle">Ossom App</string>
     <string name="onNetConnectionFailed">Check internet connection or click again to close</string>
+    <string name="your_note">Your note:</string>
+    <string name="megastars">megastars</string>
 
 </resources>

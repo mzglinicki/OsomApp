@@ -39,7 +39,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/mainMargin"
         android:clickable="true"
-        android:src="@drawable/ic_arrow_upward_black_24dp"
+        android:src="@drawable/ic_arrow_upward"
         android:visibility="gone" />
 
 </android.support.design.widget.CoordinatorLayout>

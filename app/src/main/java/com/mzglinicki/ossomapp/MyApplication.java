@@ -23,7 +23,7 @@ public class MyApplication extends Application {
 
         this.component = DaggerStorageComponent
                 .builder()
-                .daggerModule(new DaggerModule())
+                .daggerModule(new DaggerModule(this))
                 .build();
     }
 

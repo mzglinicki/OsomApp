@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.mzglinicki.ossomapp.MyApplication;
 import com.mzglinicki.ossomapp.R;
+import com.mzglinicki.ossomapp.database.DatabaseHelper;
 import com.mzglinicki.ossomapp.webService.RequestHelper;
 
 import javax.inject.Inject;
@@ -26,6 +27,8 @@ public abstract class ActivityParent extends AppCompatActivity {
 
     @Inject
     protected RequestHelper requestHelper;
+    @Inject
+    protected DatabaseHelper databaseHelper;
 
     private final static int CLOSE_APP_ON_BACK = 2000;
 
