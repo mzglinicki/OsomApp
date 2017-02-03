@@ -43,10 +43,10 @@ public abstract class ActivityParent extends AppCompatActivity {
         ((MyApplication) getApplication()).getComponent().inject(this);
         ButterKnife.bind(this);
 
-        onCreate();
+        onCreateActivity(savedInstanceState);
     }
 
-    protected abstract void onCreate();
+    protected abstract void onCreateActivity(final Bundle savedInstanceState);
 
     protected boolean isNetworkAvailable() {
         final ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);

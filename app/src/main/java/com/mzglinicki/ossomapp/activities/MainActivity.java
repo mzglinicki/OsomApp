@@ -1,8 +1,9 @@
 package com.mzglinicki.ossomapp.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,15 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.ImageView;
 
+import com.mzglinicki.ossomapp.ListItemDecorator;
 import com.mzglinicki.ossomapp.R;
 import com.mzglinicki.ossomapp.adapters.ListAdapter;
-import com.mzglinicki.ossomapp.adapters.ListItemViewHolder;
 import com.mzglinicki.ossomapp.webService.ListItem;
 import com.mzglinicki.ossomapp.webService.ServerData;
 import com.mzglinicki.ossomapp.webService.ServerListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import butterknife.Bind;
@@ -44,12 +44,13 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     @Bind(R.id.scrollFAB)
     protected FloatingActionButton scrollFAB;
 
+    private final static String ITEM_KEY = "itemKey";
     private final static int FAB_VISIBILITY_POINT = 10;
     private final static int LAST_PAGE_ID = 4;
     private final static int OVERLAP = 5;
 
     private ListAdapter adapter;
-    private List<ListItem> listForAdapter;
+    private ArrayList<ListItemDecorator> listForAdapter;
     private LinearLayoutManager linearLayoutManager;
     private boolean loading;
     private int pastVisibleItems;
@@ -62,15 +63,20 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     }
 
     @Override
-    protected void onCreate() {
-
-        loadSquareThumb(RANDOM_NICE_IMAGE, collapsingToolbar);
+    protected void onCreateActivity(final Bundle savedInstanceState) {
         initVariables();
+        loadSquareThumb(RANDOM_NICE_IMAGE, collapsingToolbar);
         setupRecyclerView(recyclerView);
         setupToolbar(toolbar);
         setupScrollListener(recyclerView);
         setupRefreshListener(swipeContainer);
-        refreshList();
+
+        if (savedInstanceState == null) {
+            refreshList();
+        } else {
+            listForAdapter = savedInstanceState.getParcelableArrayList(ITEM_KEY);
+            setupRecyclerView(recyclerView);
+        }
     }
 
     @Override
@@ -91,6 +97,12 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     }
 
     @Override
+    protected void onSaveInstanceState(final Bundle outState) {
+        outState.putParcelableArrayList(ITEM_KEY, listForAdapter);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
         setupScrollToBeginBtn(0);
@@ -102,7 +114,7 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     }
 
     @Override
-    public void onItemClickListener(final ListItem model) {
+    public void onItemClickListener(final ListItemDecorator model) {
 
         if (!isNetworkAvailable()) {
             showErrorMessage(getString(R.string.checkNetConnection));
@@ -152,7 +164,10 @@ public class MainActivity extends ActivityParent implements ListAdapter.ListClic
     }
 
     private void loadItemsToList(final ServerData serverData) {
-        Collections.addAll(listForAdapter, serverData.getData());
+
+        for (final ListItem listItem : serverData.getData()) {
+            listForAdapter.add(new ListItemDecorator(listItem));
+        }
         adapter.notifyDataSetChanged();
     }
 

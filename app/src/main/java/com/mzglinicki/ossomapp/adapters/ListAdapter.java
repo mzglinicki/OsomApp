@@ -5,12 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mzglinicki.ossomapp.webService.ListItem;
+import com.mzglinicki.ossomapp.ListItemDecorator;
 import com.mzglinicki.ossomapp.R;
+import com.mzglinicki.ossomapp.webService.ListItem;
 
 import java.util.List;
 
-import static android.view.View.*;
+import static android.view.View.OnClickListener;
 
 /**
  * Created by User on 2017-01-16.
@@ -18,10 +19,10 @@ import static android.view.View.*;
 
 public class ListAdapter extends RecyclerView.Adapter<ListItemViewHolder> {
 
-    private final List<ListItem> listForAdapter;
+    private final List<ListItemDecorator> listForAdapter;
     private final ListClickable clickListener;
 
-    public ListAdapter(final List<ListItem> listForAdapter, final ListClickable clickListener) {
+    public ListAdapter(final List<ListItemDecorator> listForAdapter, final ListClickable clickListener) {
 
         this.listForAdapter = listForAdapter;
         this.clickListener = clickListener;
@@ -29,20 +30,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListItemViewHolder> {
 
     @Override
     public ListItemViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_model, parent, false);
-        return new ListItemViewHolder(view);
+        return new ListItemViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_model, parent, false));
     }
 
     @Override
     public void onBindViewHolder(final ListItemViewHolder holder, final int position) {
 
-        final ListItem model = listForAdapter.get(position);
+        final ListItemDecorator model = listForAdapter.get(position);
         holder.getNameField().setText(model.getName());
-
         setupItemClickListener(holder, model);
     }
 
-    private void setupItemClickListener(final ListItemViewHolder holder, final ListItem model) {
+    private void setupItemClickListener(final ListItemViewHolder holder, final ListItemDecorator model) {
         if (clickListener == null) {
             return;
         }
@@ -60,6 +59,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListItemViewHolder> {
     }
 
     public interface ListClickable {
-        void onItemClickListener(final ListItem model);
+        void onItemClickListener(final ListItemDecorator model);
     }
 }

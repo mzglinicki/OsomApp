@@ -1,5 +1,6 @@
 package com.mzglinicki.ossomapp.activities;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -66,7 +67,7 @@ public class DetailsActivity extends ActivityParent {
     }
 
     @Override
-    protected void onCreate() {
+    protected void onCreateActivity(final Bundle savedInstanceState) {
         final int itemId = getIntent().getExtras().getInt(ITEM_ID);
         loadClickedItemData(itemId);
 
